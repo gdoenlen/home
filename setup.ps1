@@ -20,4 +20,5 @@ if (!get-command ubuntu -errorAction SilentlyContinue) {
     scoop install adopt8-hotspot apache-ivy git gow jq maven nodejs-lts pgadmin4-np
     scoop install postgresql psutils python sbt
     install-module posh-git -Scope CurrentUser -Force
+    ln -s ./Microsoft.PowerShell_profile.ps1 ~/Documents/WindowsPowerShell/
 }
