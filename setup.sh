@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # New computer set up script
-set -e
+set -euo pipefail
+IFS=$'\n\t'
 
 apt update
 apt upgrade -y
