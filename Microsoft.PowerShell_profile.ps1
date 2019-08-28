@@ -14,6 +14,3 @@ $fzf = whereis fzf
 function fzf {
     invoke-expression $("$fzf --reverse")
 }
-
-set-alias -name ConvertFrom-Json -value from-json
-set-alias -name ConvertFrom-String -value from-string
