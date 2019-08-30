@@ -22,3 +22,15 @@ $fzf = whereis fzf
 function fzf {
     invoke-expression $("$fzf --reverse")
 }
+
+function mkdir($path) {
+    new-item -itemtype directory -path $path
+}
+
+function touch($path) {
+    write-host $nul >> $path
+}
+
+function whereis($cmd) {
+    get-command $cmd
+}
