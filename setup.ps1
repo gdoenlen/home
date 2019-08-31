@@ -1,8 +1,11 @@
 write-host 'starting setup script..'
-if ($psversiontable.platform -eq 'Win32NT') {
+
+# platform wasn't added to the version table until 
+# pwsh 6 (the cross platform version), so if it's
+# null it means we're running pwsh 5 on windows
+if ('Win32NT', $nul -contains $psversiontable.platform) {
     set-executionpolicy RemoteSigned -scope CurrentUser
 
-    # install scoop
     write-host 'installing scoop..'
     invoke-expression (new-object net.webclient).downloadstring('https://get.scoop.sh')
     scoop bucket add extras
@@ -21,8 +24,8 @@ if ($psversiontable.platform -eq 'Win32NT') {
 }
 
 write-host 'installing ps modules..'
-install-module posh-git -scope CurrentUser -force
-install-module ZLocation -scope CurrentUser -force
+install-module posh-git -scope currentuser -force
+install-module ZLocation -scope currentuser -force
 
 write-host 'symlinking profile..'
 ln -s ./Microsoft.PowerShell_profile.ps1 $profile 
