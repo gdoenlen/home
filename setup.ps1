@@ -3,7 +3,7 @@ write-host 'starting setup script..'
 # platform wasn't added to the version table until 
 # pwsh 6 (the cross platform version), so if it's
 # null it means we're running pwsh 5 on windows
-if ('Win32NT', $nul -contains $psversiontable.platform) {
+if ('Win32NT', $null -contains $psversiontable.platform) {
     set-executionpolicy RemoteSigned -scope CurrentUser
 
     write-host 'installing scoop..'
