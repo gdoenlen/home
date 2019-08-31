@@ -17,12 +17,6 @@ set-alias -name to-csv -value ConvertTo-Csv
 set-alias -name to-xml -value ConvertTo-Xml
 set-alias -name grep -value Select-String
 
-# start fzf at the top
-$fzf = whereis fzf
-function fzf {
-    invoke-expression $("$fzf --reverse")
-}
-
 function mkdir($path) {
     new-item -itemtype directory -path $path
 }
@@ -32,5 +26,11 @@ function touch($path) {
 }
 
 function whereis($cmd) {
-    get-command $cmd
+    $(get-command $cmd).path
+}
+
+# start fzf at the top
+$fzf = whereis fzf
+function fzf {
+    invoke-expression $("$fzf --reverse")
 }
