@@ -3,19 +3,19 @@ if (!(get-module -listavailable -name posh-git)) {
 }
 
 if (!(get-module -listavailable -name ZLocation)) {
-    install-module ZLocation -scope CurrentUser -force
+    install-module ZLocation -scope currentuser -force
 }
 
 import-module posh-git
 import-module ZLocation
 
-set-alias -name from-json -value ConvertFrom-Json
-set-alias -name to-json -value ConvertTo-Json
-set-alias -name from-string -value ConvertFrom-String
-set-alias -name from-csv -value ConvertFrom-Csv
-set-alias -name to-csv -value ConvertTo-Csv
-set-alias -name to-xml -value ConvertTo-Xml
-set-alias -name grep -value Select-String
+set-alias -name from-json -value convertfrom-json
+set-alias -name to-json -value convertto-json
+set-alias -name from-string -value convertfrom-string
+set-alias -name from-csv -value convertfrom-csv
+set-alias -name to-csv -value convertto-csv
+set-alias -name to-xml -value convertto-xml
+set-alias -name grep -value select-string
 
 function mkdir($path) {
     new-item -itemtype directory -path $path
