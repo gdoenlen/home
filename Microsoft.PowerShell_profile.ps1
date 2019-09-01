@@ -22,7 +22,7 @@ function mkdir($path) {
 }
 
 function touch($path) {
-    write-host $nul >> $path
+    write-host $null >> $path
 }
 
 function whereis($cmd) {
