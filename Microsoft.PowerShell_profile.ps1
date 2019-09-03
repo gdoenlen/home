@@ -6,9 +6,16 @@ if (!(get-module -listavailable -name ZLocation)) {
     install-module ZLocation -scope currentuser -force
 }
 
+# modules 
+
+# posh-git
 import-module posh-git
+$GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
+
+# ZLocation
 import-module ZLocation
 
+# aliases
 set-alias -name from-json -value convertfrom-json
 set-alias -name to-json -value convertto-json
 set-alias -name from-string -value convertfrom-string
