@@ -33,6 +33,10 @@ function touch($path) {
 }
 
 function whereis($cmd) {
+    get-command $cmd -all | foreach-object { write-output $_.path }
+}
+
+function which($cmd) {
     $(get-command $cmd).path
 }
 
