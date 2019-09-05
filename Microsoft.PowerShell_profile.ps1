@@ -45,3 +45,9 @@ $fzf = whereis fzf
 function fzf {
     invoke-expression $("$fzf --reverse")
 }
+
+# conhost on windows messes up the colors
+Set-PSReadLineOption -colors @{Command = '#FFFF00'}
+
+# make sure we start in the home directory
+set-location ~
