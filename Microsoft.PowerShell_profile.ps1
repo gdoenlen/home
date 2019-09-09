@@ -47,7 +47,7 @@ function fzf {
 }
 
 # conhost on windows messes up the colors
-Set-PSReadLineOption -colors @{Command = '#FFFF00'}
+set-psreadlineoption -colors @{Command = '#FFFF00'}
 
 # make sure we start in the home directory
 set-location ~
