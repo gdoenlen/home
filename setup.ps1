@@ -15,9 +15,9 @@ if ('Win32NT', $null -contains $psversiontable.platform) {
     scoop update
 
     write-host 'installing programs..'
-    scoop install vscode postman 7zip kdiff3 autohotkey
-    scoop install adopt8-hotspot apache-ivy git gow jq maven nodejs-lts pgadmin4-np
-    scoop install postgresql psutils python sbt
+    scoop install vscode postman 7zip kdiff3 autohotkey `
+    adopt8-hotspot apache-ivy git maven nodejs-lts pgadmin4-np `
+    postgresql psutils python sbt
 } else {
     apt update
     # todo
