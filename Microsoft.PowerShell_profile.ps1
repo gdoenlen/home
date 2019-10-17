@@ -40,6 +40,10 @@ function which($cmd) {
     $(get-command $cmd).path
 }
 
+function pretty-print($json, $depth = 2) {
+    $json | from-json | to-json -depth $depth
+}
+
 # conhost on windows messes up the colors
 set-psreadlineoption -colors @{Command = '#FFFF00'}
 
