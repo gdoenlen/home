@@ -40,12 +40,6 @@ function which($cmd) {
     $(get-command $cmd).path
 }
 
-# start fzf at the top
-$fzf = whereis fzf
-function fzf {
-    invoke-expression $("$fzf --reverse")
-}
-
 # conhost on windows messes up the colors
 set-psreadlineoption -colors @{Command = '#FFFF00'}
 
