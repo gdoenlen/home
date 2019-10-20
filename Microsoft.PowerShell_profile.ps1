@@ -44,7 +44,8 @@ function pretty-print([parameter(ValueFromPipeline)] $json, $depth = 100) {
     $json | from-json | to-json -depth $depth
 }
 
-function bat([parameter(ValueFromPipeline, Position = 0)] $path) {
+# cat(1) with line numbers
+function lat([parameter(ValueFromPipeline, Position = 0)] $path) {
     $i = 0
     Get-Content @PSBoundParameters | ForEach-Object {
         $i++
