@@ -45,10 +45,8 @@ function pretty-print([parameter(ValueFromPipeline)] $json, $depth = 100) {
 }
 
 function bat([parameter(ValueFromPipeline, Position = 0)] $path) {
-    $params = $PSBoundParameters
-    $params.Remove("path") | Out-Null
     $i = 0
-    Get-Content $path @params | ForEach-Object {
+    Get-Content @PSBoundParameters | ForEach-Object {
         $i++
         $lineNum = if ($i -lt 10) {
             '0' + $i.ToString()
