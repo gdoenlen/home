@@ -44,6 +44,21 @@ function pretty-print([parameter(ValueFromPipeline)] $json, $depth = 100) {
     $json | from-json | to-json -depth $depth
 }
 
+function bat([parameter(ValueFromPipeline, Position = 0)] $path) {
+    $params = $PSBoundParameters
+    $params.Remove("path") | Out-Null
+    $i = 0
+    Get-Content $path @params | ForEach-Object {
+        $i++
+        $lineNum = if ($i -lt 10) {
+            '0' + $i.ToString()
+        } else {
+            $i.ToString()
+        }
+        $lineNum + ' ' + $_
+    }
+}
+
 # conhost on windows messes up the colors
 set-psreadlineoption -colors @{Command = '#FFFF00'}
 
