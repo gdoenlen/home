@@ -40,7 +40,7 @@ function which($cmd) {
     $(get-command $cmd).path
 }
 
-function pretty-print([parameter(ValueFromPipeline)] $json, $depth = 100) {
+function format-pretty([parameter(ValueFromPipeline)] $json, $depth = 100) {
     $json | from-json | to-json -depth $depth
 }
 
