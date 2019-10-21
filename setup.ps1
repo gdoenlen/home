@@ -18,6 +18,14 @@ if ('Win32NT', $null -contains $psversiontable.platform) {
     scoop install vscode postman 7zip kdiff3 autohotkey `
     adopt8-hotspot apache-ivy git maven nodejs-lts pgadmin4-np `
     postgresql psutils python sbt
+
+    Write-Host 'copying terminal settings..'
+    $packages = "$(Split-Path $env:APPDATA)/local/packages"
+    Get-ChildItem $packages | Select-Object -ExpandProperty Name | Where-Object { 
+        $_ -match 'Microsoft.WindowsTerminal'
+    } | ForEach-Object {
+        Copy-Item ./profiles.json "$packages/$_/localstate/profiles.json"
+    }
 } else {
     apt update
     # todo
