@@ -4,3 +4,6 @@
 RControl::Right
 ^#RAlt::^#Left
 ^#RControl::^#Right
+#RAlt::#Left
+#RControl::#Right
+#/::#Up
