@@ -58,7 +58,7 @@ function lat([parameter(ValueFromPipeline, Position = 0)] $path) {
     }
 }
 
-function Set-Java($version) {
+function set-java($version) {
     $env:JAVA_HOME = "~/scoop/apps/$version/current"
 }
 
