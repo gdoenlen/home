@@ -58,6 +58,10 @@ function lat([parameter(ValueFromPipeline, Position = 0)] $path) {
     }
 }
 
+function Set-Java($version) {
+    $env:JAVA_HOME = "~/scoop/apps/$version/current"
+}
+
 # conhost on windows messes up the colors
 set-psreadlineoption -colors @{Command = '#FFFF00'}
 
