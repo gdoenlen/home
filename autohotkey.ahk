@@ -2,3 +2,8 @@
 #c::Volume_Up
 #`::Volume_Mute
 RControl::Right
+^#RAlt::^#Left
+^#RControl::^#Right
+#RAlt::#Left
+#RControl::#Right
+#/::#Up
