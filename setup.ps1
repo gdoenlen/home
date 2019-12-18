@@ -37,5 +37,6 @@ Install-Module ZLocation -scope currentuser -force
 
 Write-Host 'copying profile..'
 Copy-Item ./Microsoft.PowerShell_profile.ps1 $profile 
+Copy-Item ./.vimrc ~
 
 Write-Host 'done'
