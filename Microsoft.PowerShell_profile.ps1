@@ -62,6 +62,12 @@ function set-java($version) {
     $env:JAVA_HOME = "~/scoop/apps/$version/current"
 }
 
+# sudo isn't currently supported for cmdlets
+# see: https://github.com/PowerShell/PowerShell/issues/11343
+function pssudo {
+    & /usr/bin/env sudo pwsh -command "& $args"
+}
+
 # conhost on windows messes up the colors
 set-psreadlineoption -colors @{Command = '#FFFF00'}
 
