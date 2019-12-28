@@ -65,7 +65,7 @@ function set-java($version) {
 # sudo isn't currently supported for cmdlets
 # see: https://github.com/PowerShell/PowerShell/issues/11343
 function pssudo {
-    & /usr/bin/env sudo pwsh -command "& $args"
+    & /usr/bin/env sudo pwsh -NoProfile -NonInteractive -Command "& $args"
 }
 
 # conhost on windows messes up the colors
