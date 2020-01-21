@@ -69,7 +69,8 @@ function pssudo {
 }
 
 # conhost on windows messes up the colors
-set-psreadlineoption -colors @{Command = '#FFFF00'}
+Set-PSReadLineOption -colors @{Command = '#FFFF00'}
+Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
 # make sure we start in the home directory
-set-location ~
+Set-Location ~
