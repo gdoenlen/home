@@ -17,7 +17,7 @@ if ('Win32NT', $null -contains $psversiontable.platform) {
     Write-Host 'installing programs..'
     scoop install vscode postman 7zip kdiff3 autohotkey `
     adopt8-hotspot apache-ivy git maven nodejs-lts pgadmin4-np `
-    postgresql psutils python sbt
+    postgresql psutils python sbt tldr
 
     Write-Host 'copying terminal settings..'
     $packages = "$(Split-Path $env:APPDATA)/local/packages"
