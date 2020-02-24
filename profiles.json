@@ -48,6 +48,6 @@
     // To unbind a default keybinding, set the command to "unbound"
     "keybindings": [
         { "command": "newTab", "keys": ["ctrl+t"] },
-        { "command": "closeTab", "keys": ["ctrl+w"] }
+        { "command": "closePane", "keys": ["ctrl+w"] }
     ]
 }
