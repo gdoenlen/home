@@ -7,3 +7,4 @@ RControl::Right
 #RAlt::#Left
 #RControl::#Right
 #/::#Up
+CapsLock::Esc
