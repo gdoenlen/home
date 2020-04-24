@@ -9,6 +9,10 @@ if (!(get-module -listavailable -name ZLocation)) {
     install-module ZLocation -scope currentuser -force
 }
 
+if (!(Get-Module -ListAvailable -Name Microsoft.PowerShell.ConsoleGuiTools)) {
+    Install-Module Microsoft.PowerShell.ConsoleGuiTools
+}
+
 # modules 
 
 # posh-git
