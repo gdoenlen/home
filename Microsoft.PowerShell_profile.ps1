@@ -1,3 +1,6 @@
+$env:DOTNET_CLI_TELEMETRY_OPTOUT = 1
+$env:POWERSHELL_TELEMETRY_OPTOUT = 1
+
 if (!(get-module -listavailable -name posh-git)) {
     install-module posh-git -scope currentuser -force
 }
