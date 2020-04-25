@@ -13,6 +13,10 @@ if (!(Get-Module -ListAvailable -Name Microsoft.PowerShell.ConsoleGuiTools)) {
     Install-Module Microsoft.PowerShell.ConsoleGuiTools
 }
 
+if ($PSVersionTable.Platform -eq 'Unix') {
+    $env:TMP = [IO.Path]::GetTempPath()
+}
+
 # modules 
 
 # posh-git
