@@ -4,4 +4,5 @@
 :command Q q
 
 set clipboard=unnamed
-
+set hlsearch
+set incsearch
