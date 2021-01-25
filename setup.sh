@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# New computer set up script
 set -euo pipefail
 IFS=$'\n\t'
 
