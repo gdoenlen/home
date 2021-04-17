@@ -17,7 +17,11 @@ if (!(Get-Module -ListAvailable -Name Microsoft.PowerShell.ConsoleGuiTools)) {
 }
 
 if (!(Test-Path ~/code/poshdotenv)) {
-    git clone https://github.com/gdoenlen/poshdotenv
+    $cwd = $PWD
+    Set-Location ~/code
+
+    git clone https://github.com/gdoenlen/poshdotenv 
+    Set-Location $cwd
 }
 Import-Module -Name ~/code/poshdotenv/module/dotenv
 
