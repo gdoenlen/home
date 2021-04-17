@@ -1,54 +1,55 @@
 $env:DOTNET_CLI_TELEMETRY_OPTOUT = 1
 $env:POWERSHELL_TELEMETRY_OPTOUT = 1
 
-if (!(get-module -listavailable -name posh-git)) {
-    install-module posh-git -scope currentuser -force
+if (!(Get-Module -ListAvailable -Name posh-git)) {
+    Install-Module posh-git -Scope CurrentUser -Force
 }
 
-if (!(get-module -listavailable -name ZLocation)) {
-    install-module ZLocation -scope currentuser -force
+if (!(Get-Module -ListAvailable -Name ZLocation)) {
+    Install-Module ZLocation -Scope CurrentUser -Force
 }
 
 if (!(Get-Module -ListAvailable -Name Microsoft.PowerShell.ConsoleGuiTools)) {
     Install-Module Microsoft.PowerShell.ConsoleGuiTools
 }
 
+if (!(Get-Module -ListAvailable -Name dotenv)) {
+    Install-Module dotenv -Scope CurrentUser -Force
+}
+
 if ($PSVersionTable.Platform -eq 'Unix') {
     $env:TMP = [IO.Path]::GetTempPath()
 }
 
-# modules 
-
-# posh-git
-import-module posh-git
+Import-Module posh-git
 $GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
 
-# ZLocation
-import-module ZLocation
+Import-Module ZLocation
 
-# aliases
-set-alias -name from-json -value convertfrom-json
-set-alias -name to-json -value convertto-json
-set-alias -name from-string -value convertfrom-string
-set-alias -name from-csv -value convertfrom-csv
-set-alias -name to-csv -value convertto-csv
-set-alias -name to-xml -value convertto-xml
-set-alias -name grep -value select-string
+Import-Module dotenv
+
+Set-Alias -Name from-json -Value convertfrom-json
+Set-Alias -Name to-json -Value convertto-json
+Set-Alias -Name from-string -Value convertfrom-string
+Set-Alias -Name from-csv -Value convertfrom-csv
+Set-Alias -Name to-csv -Value convertto-csv
+Set-Alias -Name to-xml -Value convertto-xml
+Set-Alias -Name grep -Value select-string
 
 function mkdir($path) {
-    new-item -itemtype directory -path $path
+    New-Item -ItemType Directory -Path $path
 }
 
 function touch($path) {
-    write-host $null >> $path
+    Write-Host $null >> $path
 }
 
 function whereis($cmd) {
-    get-command $cmd -all | foreach-object { write-output $_.path }
+    Get-Command $cmd -all | Foreach-Object { Write-Output $_.path }
 }
 
 function which($cmd) {
-    $(get-command $cmd).path
+    $(Get-Command $cmd).path
 }
 
 function format-pretty([parameter(ValueFromPipeline)] $json, $depth = 100) {
