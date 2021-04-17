@@ -4,29 +4,26 @@ $env:POWERSHELL_TELEMETRY_OPTOUT = 1
 if (!(Get-Module -ListAvailable -Name posh-git)) {
     Install-Module posh-git -Scope CurrentUser -Force
 }
+Import-Module posh-git
+$GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
 
 if (!(Get-Module -ListAvailable -Name ZLocation)) {
     Install-Module ZLocation -Scope CurrentUser -Force
 }
+Import-Module ZLocation
 
 if (!(Get-Module -ListAvailable -Name Microsoft.PowerShell.ConsoleGuiTools)) {
     Install-Module Microsoft.PowerShell.ConsoleGuiTools
 }
 
-if (!(Get-Module -ListAvailable -Name dotenv)) {
-    Install-Module dotenv -Scope CurrentUser -Force
+if (!(Test-Path ~/code/poshdotenv)) {
+    git clone https://github.com/gdoenlen/poshdotenv
 }
+Import-Module -Name ~/code/poshdotenv/module/dotenv
 
 if ($PSVersionTable.Platform -eq 'Unix') {
     $env:TMP = [IO.Path]::GetTempPath()
 }
-
-Import-Module posh-git
-$GitPromptSettings.DefaultPromptAbbreviateHomeDirectory = $true
-
-Import-Module ZLocation
-
-Import-Module dotenv
 
 Set-Alias -Name from-json -Value convertfrom-json
 Set-Alias -Name to-json -Value convertto-json
