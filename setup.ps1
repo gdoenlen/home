@@ -21,6 +21,7 @@ code --install-extension redhat.fabric8-analytics
 code --install-extension eamodio.gitlens
 code --install-extension SonarSource.sonarlint-vscode
 code --install-extension vscodevim.vim
+code --install-extension skattyadz.vscode-quick-scope
 
 Write-Host 'copying terminal settings..'
 $packages = "$(Split-Path $env:APPDATA)/local/packages"
