@@ -13,7 +13,7 @@ scoop update
 
 Write-Host 'installing programs..'
 scoop install vscode 7zip kdiff3 autohotkey `
-jmc git maven zulu-jdk`
+jmc git maven zulu-jdk `
 
 Write-Host 'installing editor extensions..'
 code --install-extension vscjava.vscode-java-pack
