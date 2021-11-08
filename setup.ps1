@@ -7,6 +7,7 @@ Invoke-Expression (New-Object net.webclient).downloadstring('https://get.scoop.s
 scoop bucket add extras
 scoop bucket add java
 scoop bucket add nonportable
+scoop bucket add versions
 
 scoop update
 
