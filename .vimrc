@@ -6,5 +6,6 @@
 set clipboard=unnamed
 set hlsearch
 set incsearch
+set noerrorbells
 
 inoremap jj <Esc>
