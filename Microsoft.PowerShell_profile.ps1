@@ -79,11 +79,11 @@ function pssudo {
 
 # sbt is the worst build tool i've ever used.
 function Sbt-TestOnly($package) {
-	if ($package -match 'ItTest$') {
-		sbt "it:test::testOnly $package"
-	} else {
-		sbt "testOnly $package"
-	}
+    if ($package -match 'ItTest$') {
+        sbt "it:test::testOnly $package"
+    } else {
+        sbt "testOnly $package"
+    }
 }
 
 # conhost on windows messes up the colors
