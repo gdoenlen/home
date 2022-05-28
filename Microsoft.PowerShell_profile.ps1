@@ -29,13 +29,14 @@ if ($PSVersionTable.Platform -eq 'Unix') {
     $env:TMP = [IO.Path]::GetTempPath()
 }
 
-Set-Alias -Name from-json -Value convertfrom-json
-Set-Alias -Name to-json -Value convertto-json
-Set-Alias -Name from-string -Value convertfrom-string
-Set-Alias -Name from-csv -Value convertfrom-csv
-Set-Alias -Name to-csv -Value convertto-csv
-Set-Alias -Name to-xml -Value convertto-xml
+Set-Alias -Name cfj -Value convertfrom-json
+Set-Alias -Name ctj -Value convertto-json
+Set-Alias -Name cfs -Value convertfrom-string
+Set-Alias -Name cfcsv -Value convertfrom-csv
+Set-Alias -Name ctcsv -Value convertto-csv
+Set-Alias -Name ctxml -Value convertto-xml
 Set-Alias -Name grep -Value select-string
+Set-alias -Name sudo -Value Invoke-gsudo
 
 function mkdir($path) {
     New-Item -ItemType Directory -Path $path
