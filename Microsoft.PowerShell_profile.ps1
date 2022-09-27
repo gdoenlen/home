@@ -37,6 +37,7 @@ Set-Alias -Name ctcsv -Value convertto-csv
 Set-Alias -Name ctxml -Value convertto-xml
 Set-Alias -Name grep -Value select-string
 Set-alias -Name sudo -Value Invoke-gsudo
+Set-Alias -Name vim -Value nvim
 
 function mkdir($path) {
     New-Item -ItemType Directory -Path $path
@@ -70,6 +71,10 @@ function lat([parameter(ValueFromPipeline, Position = 0)] $path) {
         }
         $lineNum + ' ' + $_
     }
+}
+
+function less($path) {
+    Get-Content $path | Out-Host -Paging	
 }
 
 # sudo isn't currently supported for cmdlets
