@@ -13,7 +13,7 @@ if (!(Get-Module -ListAvailable -Name ZLocation)) {
 Import-Module ZLocation
 
 if (!(Get-Module -ListAvailable -Name Microsoft.PowerShell.ConsoleGuiTools)) {
-    Install-Module Microsoft.PowerShell.ConsoleGuiTools
+    Install-Module Microsoft.PowerShell.ConsoleGuiTools -Scope CurrentUser -Force
 }
 
 if (!(Test-Path ~/code/poshdotenv)) {
