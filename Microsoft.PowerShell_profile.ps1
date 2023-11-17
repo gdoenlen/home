@@ -93,7 +93,7 @@ function Sbt-TestOnly($package) {
 }
 
 # conhost on windows messes up the colors
-Set-PSReadLineOption -colors @{Command = '#FFFF00'}
+Set-PSReadLineOption -Colors @{ Command = '#FFFF00'; InlinePrediction = $PSStyle.Foreground.BrightBlack }
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineOption -ShowToolTips
 Set-PSReadLineOption -PredictionSource History
